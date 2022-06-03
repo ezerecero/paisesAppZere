@@ -14,13 +14,15 @@
 </div>
 
 <hr>
-<div class="alert alert-danger">
-    No se encotró nada con el término ASDF
+<div *ngIf="hayError" 
+    class="alert alert-danger">
+    No se encotró nada con el término {{termino}}
 </div>
 
-<div class="row">
+<div *ngIf="paises.length > 0" class="row">
     <div class="col">
-        <table class="table table-hover">
+        <table  *ngIf="!hayError"
+                class="table table-hover">
             <thead>
                 <tr>
                     <th> # </th>
@@ -31,14 +33,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>bandera</td>
-                    <td>nombre</td> 
-                    <td>12345678</td>
-                    <td>12345678</td>
+                <tr *ngFor="let paisitem of paises; let i = index">
+                    <td> {{ i + 1 }}</td>
                     <td>
-                        <a href="/pais/cri">Ver...</a>
+                        <img class="small-flag" [src]="paisitem.flags.png" >
+                    </td>
+                    <td>{{ paisitem.name.common }}</td> 
+                    <td>{{ paisitem.population | number}}</td>
+                    <td>{{ paisitem.area }}</td>
+                    <td>
+                        <a [routerLink]="['/pais', paisitem.cca2]">Ver...</a>
                     </td>
                 </tr>
 
