@@ -1,9 +1,10 @@
-<h2>Por País</h2>
+<h2>Lilieth, te hice este programa para que aprendas de los paises.</h2>
 <hr>
 
 <div class="row">
     <div class="col">
         <app-pais-input
+            (onDebounce)="sugerencias( $event )"
             (onEnter)="buscar( $event )">
         </app-pais-input>
     </div>

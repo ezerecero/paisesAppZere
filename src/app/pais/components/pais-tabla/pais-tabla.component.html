@@ -2,10 +2,12 @@
     <thead>
         <tr>
             <th> # </th>
-            <th> Bendera </th>
-            <th> Nombre </th>
-            <th> Pobación </th>
-            <th></th>
+            <th> Esta es la bandera Lilieth jaja no te dabas cuenta</th>
+            <th> Nombre del pías hija </th>
+            <th> Pobación, fijate en el numero hija! ¿Lo puedes leer y entender?</th>
+            <th> Area m² <-- Sabes que es esto? </th>
+            <th> Capital </th>
+            <th> Este es el escudo de armas Lilieth ya viste?? </th>
         </tr>
     </thead>
     <tbody>
@@ -14,9 +16,13 @@
             <td>
                 <img class="small-flag" [src]="paisitem.flags.png" >
             </td>
-            <td>{{ paisitem.name.common }}</td> 
+            <td>{{ paisitem.flag }} {{ paisitem.name.common }}</td> 
             <td>{{ paisitem.population | number}}</td>
-            <td>{{ paisitem.area }}</td>
+            <td>{{ paisitem.area | number }}</td>
+            <td>{{ paisitem.capital }}</td>
+            <td>
+                <img class="small-flag" [src]="paisitem.coatOfArms.png" >
+            </td>
             <td>
                 <a [routerLink]="['/pais', paisitem.cca2]">Ver...</a>
             </td>
