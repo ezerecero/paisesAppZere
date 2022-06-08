@@ -5,21 +5,20 @@
             <th> Esta es la bandera Lilieth jaja no te dabas cuenta</th>
             <th> Nombre del pías hija </th>
             <th> Pobación, fijate en el numero hija! ¿Lo puedes leer y entender?</th>
-            <th> Area m² <-- Sabes que es esto? </th>
-            <th> Capital </th>
+            <th> Area m² <-- Sabes que es esto? </th>           
             <th> Este es el escudo de armas Lilieth ya viste?? </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let paisitem of paises; let i = index">
+        <tr *ngFor="let paisitem of paises; let i = index"
+            class="animate__animated animate__headShake">
             <td> {{ i + 1 }}</td>
             <td>
                 <img class="small-flag" [src]="paisitem.flags.png" >
             </td>
-            <td>{{ paisitem.flag }} {{ paisitem.capital[0] }} , {{ paisitem.name.common }}</td> 
+            <td>{{ paisitem.flag }} -- {{ paisitem.capital }} -- {{ paisitem.name.common }}</td> 
             <td>{{ paisitem.population | number}}</td>
-            <td>{{ paisitem.area | number }}</td>
-            <td>{{ paisitem.capital }}</td>
+            <td>{{ paisitem.area | number }}</td>            
             <td>
                 <img class="small-flag" [src]="paisitem.coatOfArms.png" >
             </td>
